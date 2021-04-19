@@ -1,5 +1,5 @@
 
-package projecte.uf2;
+package src.UF2;
 
 import java.util.Scanner;
 

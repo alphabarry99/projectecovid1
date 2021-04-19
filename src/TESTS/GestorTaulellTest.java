@@ -1,6 +1,4 @@
-package projecte.TESTS;
-
-import static org.junit.jupiter.api.Assertions.*;
+package src.TESTS;
 
 class GestorTaulellTest {
 

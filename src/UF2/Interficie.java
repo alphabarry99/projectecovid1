@@ -1,4 +1,4 @@
-package projecte.uf2;
+package src.UF2;
 
 
 public class Interficie {

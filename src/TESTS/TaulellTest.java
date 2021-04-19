@@ -1,8 +1,5 @@
-package projecte.TESTS;
-import org.junit.jupiter.api.Assertions;
+package src.TESTS;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class TaulellTest {
 
