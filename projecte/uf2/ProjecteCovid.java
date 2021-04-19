@@ -8,6 +8,7 @@ import java.util.Scanner;
  * @author Albert Buch i Alpha Omar Barry
  * @version 25/03/2021
  */
+ //Prova Commit Albert
 public class ProjecteCovid {
 
 
