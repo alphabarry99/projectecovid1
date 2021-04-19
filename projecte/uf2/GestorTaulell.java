@@ -24,7 +24,7 @@ public class GestorTaulell {
         t.setColumnes(columnes);
         t.createTaulellRand();
     }
-
+//  Prova commit Alpha
     /**
      *Aquí cridarem la funció de createtaulellbuit
      *juntament amb funcions per mofificar les columnes i les files
