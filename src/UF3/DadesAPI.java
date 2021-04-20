@@ -22,7 +22,11 @@ public class DadesAPI {
         JSONObject jsonObject = (JSONObject) parser.parse(new InputStreamReader(connection.getInputStream()));
         JSONArray dates = (JSONArray) jsonObject.get("dates");
         for (int i = 0; i < jsonObject.size(); i++) {
-            JSONObject fecha = (JSONObject) JSONArray.get(i);
+            JSONObject data = (JSONObject) dates.get(i);
+            JSONObject paisos = (JSONObject) data.get(i);
+            JSONObject españa = (JSONObject) paisos.get(i);
+            JSONObject regiones = (JSONObject) españa.get(i);
+            System.out.println("Casos confirmats a Catalunya" + regiones.get("today_new_confirmed"));
         }
     }
 }
