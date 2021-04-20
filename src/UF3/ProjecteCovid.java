@@ -1,6 +1,15 @@
 
 package src.UF3;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Scanner;
 
 /**
@@ -12,7 +21,7 @@ import java.util.Scanner;
 public class ProjecteCovid {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ParseException {
         ProjecteCovid solucio = new ProjecteCovid();
         solucio.inici();
     }
@@ -22,16 +31,17 @@ public class ProjecteCovid {
      * per pantalla i segons la opció triada executa una o altre instrucció fins
      * que aquesta opció sigui la de sortir.
      */
-    public void inici() {
+    public void inici() throws IOException, ParseException {
         String[] menu = {
                 "MENÚ",
-                "1. XXX", "2. XXX", "3. XXX", "4. XXX", "0. Sortir"
+                "1. XXX", "2. XXX", "3. XXX", "4. XXX","5. XXX", "0. Sortir"
         };
         int opcio = 0;
         int files = 0;
         int columnes = 0;
         src.UF3.GestorTaulell g = new src.UF3.GestorTaulell();
         src.UF3.Taulell t = new Taulell();
+        src.UF3.DadesAPI d = new DadesAPI();
 
         //  float[][] taulell = new float[0][0];
         Scanner sc = new Scanner(System.in);
@@ -75,6 +85,9 @@ public class ProjecteCovid {
                     System.out.println(t.getFiles());
                     System.out.println(t.getColumnes());
                     System.out.println(t.toString());
+                    break;
+                case 5:
+                    d.dadesCatalunya();
                     break;
                 case 0:
 

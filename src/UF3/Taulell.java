@@ -120,6 +120,10 @@ public class Taulell {
             }
         }
     }
+    public void createTaulellBuitTxT() {
+        this.taulell = new float[files][columnes];
+
+    }
 
     /**
      * Enns ajudará a poder printar bé el taulell
