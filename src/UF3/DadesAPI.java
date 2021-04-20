@@ -20,14 +20,13 @@ public class DadesAPI {
 
         JSONParser parser = new JSONParser();
         JSONObject jsonObject = (JSONObject) parser.parse(new InputStreamReader(connection.getInputStream()));
-        JSONArray dates = (JSONArray) jsonObject.get("dates");
-        for (int i = 0; i < jsonObject.size(); i++) {
-            JSONObject data = (JSONObject) dates.get(i);
-            JSONObject paisos = (JSONObject) data.get(i);
-            JSONObject españa = (JSONObject) paisos.get(i);
-            JSONObject regiones = (JSONObject) españa.get(i);
-            System.out.println("Casos confirmats a Catalunya" + regiones.get("today_new_confirmed"));
-        }
+        JSONObject data = (JSONObject) jsonObject.get("dates");
+        JSONObject fecha = (JSONObject) data.get("2020-04-19");
+        JSONObject countries = (JSONObject) fecha.get("countries");
+        JSONObject Spain = (JSONObject) countries.get("Spain");
+        JSONArray regions = (JSONArray) Spain.get("regions");
+        JSONObject region = (JSONObject) regions.get(0);
+        System.out.println("A Catalunya hi han hagut : " + region.get("today_new_confirmed") + " casos de CoronaVirus avui, ahir " + region.get("date"));
     }
 }
 
