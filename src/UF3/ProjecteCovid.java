@@ -88,13 +88,13 @@ public class ProjecteCovid {
                     System.out.println("4-Consultar dades de qualsevol país en un interval concret ");
                     int opciodades = sc.nextInt();
                     switch (opciodades){
-                        case 1: d.GetdadesCatalunya();
+                        case 1: d.getDadesCatalunya();
                             break;
-                        case 2: d.GetdadesGirona();
+                        case 2: d.getDadesGirona();
                             break;
-                        case 3: d.GetdadesMundials();
+                        case 3: d.getDadesMundials();
                             break;
-                        case 4: d.GetdadesMundialsInterval();
+                        case 4: d.getDadesMundialsInterval();
                     }
                     break;
                 case 0:
