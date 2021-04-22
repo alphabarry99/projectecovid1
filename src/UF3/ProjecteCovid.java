@@ -81,9 +81,9 @@ public class ProjecteCovid {
                     break;
                 case 5:
                     System.out.println("¿Que vols fer amb les dades del Covid?");
-                    System.out.println("1-Consultar dades de Catalunya");
-                    System.out.println("2-Consultar dades de Girona");
-                    System.out.println("3-Consultar dades de qualsevol país");
+                    System.out.println("1-Consultar dades de Catalunya en un día en concret");
+                    System.out.println("2-Consultar dades de Girona en un día en concret");
+                    System.out.println("3-Consultar dades de qualsevol país en un día en concret");
                     System.out.println("4-Consultar dades de qualsevol país en un interval concret ");
                     int opciodades = sc.nextInt();
                     switch (opciodades){
