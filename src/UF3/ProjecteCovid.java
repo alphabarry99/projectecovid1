@@ -1,8 +1,16 @@
 
 package src.UF3;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Scanner;
 
 /**
@@ -47,11 +55,16 @@ public class ProjecteCovid {
                     int opcio2 = sc.nextInt();
                     switch (opcio2) {
                         case 1:
-                            System.out.println("Dona'm les files i les columnes");
-                            g.carregarDades(t);
-                            System.out.println(t.getFiles());
-                            System.out.println(t.getColumnes());
-                            System.out.println(t.toString());
+                            try {
+                                File f = new File("res/taulells.txt");
+                                Scanner in = new Scanner(f);
+
+                                while (in.hasNextLine()){
+                                    System.out.println(in.nextLine());
+                                }
+                            }catch (Exception e){
+                                System.out.println(e.getMessage());
+                            }
                             break;
                         case 2:
                             System.out.println("Dona'm les files i les columnes");
@@ -80,21 +93,7 @@ public class ProjecteCovid {
                     System.out.println(t.toString());
                     break;
                 case 5:
-                    System.out.println("¿Que vols fer amb les dades del Covid?");
-                    System.out.println("1-Consultar dades de Catalunya");
-                    System.out.println("2-Consultar dades de Girona");
-                    System.out.println("3-Consultar dades de qualsevol país");
-                    System.out.println("4-Consultar dades de qualsevol país en un interval concret ");
-                    int opciodades = sc.nextInt();
-                    switch (opciodades){
-                        case 1: d.dadesCatalunya();
-                        break;
-                        case 2: d.dadesGirona();
-                        break;
-                        case 3: d.dadesMundials();
-                        break;
-                        case 4: d.dadesMundialsInterval();
-                    }
+                    d.dadesCatalunya();
                     break;
                 case 0:
 
