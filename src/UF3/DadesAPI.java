@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class DadesAPI {
 
-    public void dadesCatalunya() throws IOException, ParseException {
+    public void GetdadesCatalunya() throws IOException, ParseException {
         System.out.println("Quin día vols veure (Format: AAAA-MM-DD)");
         Scanner in = new Scanner(System.in);
         String dataPrint = in.nextLine();
@@ -33,7 +33,7 @@ public class DadesAPI {
         JSONObject region = (JSONObject) regions.get(0);
         System.out.println("A Catalunya hi han hagut : " + region.get("today_new_confirmed") + " casos de CoronaVirus ahir : " + region.get("date"));
     }
-    public void dadesGirona() throws IOException, ParseException{
+    public void GetdadesGirona() throws IOException, ParseException{
         System.out.println("Quin día vols veure (Format: AAAA-MM-DD)");
         Scanner in = new Scanner(System.in);
         String dataPrint = in.nextLine();
@@ -56,7 +56,7 @@ public class DadesAPI {
 
 
     }
-    public void dadesMundials() throws IOException, ParseException{
+    public void GetdadesMundials() throws IOException, ParseException{
         System.out.println("Quin día vols veure (Format: AAAA-MM-DD)");
         Scanner in = new Scanner(System.in);
         String dataPrintMundial = in.nextLine();
@@ -74,7 +74,8 @@ public class DadesAPI {
         JSONObject Pais = (JSONObject) countries.get(paisPrintat);
         System.out.println("A "+ Pais.get("name_es")+ " hi han hagut: "+ Pais.get("yesterday_confirmed") + " casos de CoronaVirus el día : " + dataPrintMundial);
     }
-    public void dadesMundialsInterval() throws IOException, ParseException{
+    public void GetdadesMundialsInterval() throws IOException, ParseException{
+
 
     }
 
