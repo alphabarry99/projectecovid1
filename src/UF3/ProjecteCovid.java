@@ -1,8 +1,16 @@
 
 package src.UF3;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Scanner;
 
 /**
@@ -43,22 +51,15 @@ public class ProjecteCovid {
             opcio = Utils.validarEnter("Tria una opció", "Error");
             switch (opcio) {
                 case 1:
-                    System.out.println("¿Que el vols ple o buit?(ple=1/buit=2)");
-                    int opcio2 = sc.nextInt();
-                    switch (opcio2) {
-                        case 1:
-                            System.out.println("Dona'm les files i les columnes");
-                            g.carregarDades(t);
-                            System.out.println(t.getFiles());
-                            System.out.println(t.getColumnes());
-                            System.out.println(t.toString());
-                            break;
-                        case 2:
-                            System.out.println("Dona'm les files i les columnes");
-                            g.carregarDadesBuit(t);
-                            System.out.println(t.getFiles());
-                            System.out.println(t.getColumnes());
-                            System.out.println(t.toString());
+                    try {
+                        File f = new File("res/taulells.txt");
+                        Scanner in = new Scanner(f);
+
+                        while (in.hasNextLine()){
+                            System.out.println(in.nextLine());
+                        }
+                    }catch (Exception e){
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 2:
@@ -80,6 +81,7 @@ public class ProjecteCovid {
                     System.out.println(t.toString());
                     break;
                 case 5:
+                    d.dadesCatalunya();
                     System.out.println("¿Que vols fer amb les dades del Covid?");
                     System.out.println("1-Consultar dades de Catalunya en un día en concret");
                     System.out.println("2-Consultar dades de Girona en un día en concret");
@@ -88,11 +90,11 @@ public class ProjecteCovid {
                     int opciodades = sc.nextInt();
                     switch (opciodades){
                         case 1: d.dadesCatalunya();
-                        break;
+                            break;
                         case 2: d.dadesGirona();
-                        break;
+                            break;
                         case 3: d.dadesMundials();
-                        break;
+                            break;
                         case 4: d.dadesMundialsInterval();
                     }
                     break;
