@@ -94,6 +94,21 @@ public class ProjecteCovid {
                     break;
                 case 5:
                     d.dadesCatalunya();
+                    System.out.println("¿Que vols fer amb les dades del Covid?");
+                    System.out.println("1-Consultar dades de Catalunya");
+                    System.out.println("2-Consultar dades de Girona");
+                    System.out.println("3-Consultar dades de qualsevol país");
+                    System.out.println("4-Consultar dades de qualsevol país en un interval concret ");
+                    int opciodades = sc.nextInt();
+                    switch (opciodades){
+                        case 1: d.dadesCatalunya();
+                            break;
+                        case 2: d.dadesGirona();
+                            break;
+                        case 3: d.dadesMundials();
+                            break;
+                        case 4: d.dadesMundialsInterval();
+                    }
                     break;
                 case 0:
 
