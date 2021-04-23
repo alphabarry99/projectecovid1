@@ -31,7 +31,8 @@ public class DadesAPI {
         JSONObject Spain = (JSONObject) countries.get("Spain");
         JSONArray regions = (JSONArray) Spain.get("regions");
         JSONObject region = (JSONObject) regions.get(0);
-        System.out.println("A Catalunya hi han hagut : " + region.get("today_new_confirmed") + " casos de CoronaVirus ahir : " + region.get("date"));
+
+        System.out.println("A Catalunya hi han hagut : " + region.get("today_new_confirmed") + " casos de CoronaVirus el día : " + region.get("date"));
     }
     public void getDadesGirona() throws IOException, ParseException{
         System.out.println("¿Quin día vols veure? (Format: AAAA-MM-DD)");
@@ -52,6 +53,7 @@ public class DadesAPI {
         JSONObject region = (JSONObject) regions.get(0);
         JSONArray subregions = (JSONArray) region.get("sub_regions");
         JSONObject girona = (JSONObject) subregions.get(1);
+
         System.out.println("A Girona hi han hagut: "+ girona.get("yesterday_confirmed") + " casos de CoronaVirus el día : " + dataPrint);
 
 
@@ -72,6 +74,7 @@ public class DadesAPI {
         JSONObject fecha = (JSONObject) data.get(dataPrintMundial);
         JSONObject countries = (JSONObject) fecha.get("countries");
         JSONObject Pais = (JSONObject) countries.get(paisPrintat);
+
         System.out.println("A "+ Pais.get("name_es")+ " hi han hagut: "+ Pais.get("yesterday_confirmed") + " casos de CoronaVirus el día : " + dataPrintMundial);
     }
     public void getDadesMundialsInterval() throws IOException, ParseException{
@@ -94,9 +97,11 @@ public class DadesAPI {
         JSONObject fechaFinish = (JSONObject) data.get(dataPrintMundialFinish);
         JSONObject countriesFinish = (JSONObject) fechaFinish.get("countries");
         JSONObject PaisFinish= (JSONObject) countriesFinish.get(paisPrintat);
+
         Long casosStart= (Long) PaisStart.get("today_confirmed");
         Long casosFin = (Long) PaisFinish.get("today_confirmed");
         Long casosTotal = casosFin-casosStart;
+
         System.out.println("A "+PaisStart.get("name_es")+ " hi han hagut un total de: "+casosTotal+" casos de CoronaVirus en el interval de : "+dataPrintMundialStart+" a "+dataPrintMundialFinish);
     }
 

@@ -135,7 +135,7 @@ public class Taulell {
         StringBuilder cad = new StringBuilder();
         for (int i = 0; i < files; i++) {
             for (int j = 0; j < columnes; j++) {
-                cad.append((int) taulell[i][j] + "\t");
+                cad.append(taulell[i][j] + "\t");
             }
             cad.append("\n");
         }
