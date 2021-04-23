@@ -9,9 +9,9 @@ import java.util.Random;
  */
 public class Taulell {
 
-    private int files;
-    private int columnes;
-    private float[][] taulell;
+    private  int files;
+    private  int columnes;
+    private  float[][] taulell;
 
     /**
      * Es per obtenir el taulell senser
