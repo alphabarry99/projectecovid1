@@ -2,7 +2,9 @@ package src.UF3;
 
 import com.sun.security.jgss.GSSUtil;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class LecturaFitxer {
@@ -31,12 +33,8 @@ public class LecturaFitxer {
                     llegirtaulell[i][j] = Float.parseFloat(String.valueOf(separador[j]));
                     System.out.print(llegirtaulell[i][j]);
                 }
-                espai = in.nextLine();
-                separador = espai.split(" ");
             }
-
             taulell.setTaulell(llegirtaulell);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
