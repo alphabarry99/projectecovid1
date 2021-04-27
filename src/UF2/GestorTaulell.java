@@ -60,11 +60,7 @@ public class GestorTaulell {
         System.out.println("Introdueix la taxa de transmisió");
         Scanner in=new Scanner(System.in);
         float taxa=in.nextFloat();
-        for (int i = 0; i <taulell.getFiles(); i++) {
-            for (int j = 0; j < taulell.getColumnes(); j++) {
-                taulell.getTaulell()[i][j] = (int)(taulell.getTaulell()[i][j]*taxa)+taulell.getTaulell()[i][j];
-            }
-        }
+        taulell.transmitirVirus(taxa);
     }
 
     /**
@@ -121,7 +117,7 @@ public class GestorTaulell {
                 for (int i = 0; i < t.getFiles(); i++) {
                     for (int j = 0; j < t.getColumnes(); j++) {
                         if (t.getTaulell()[i][j] > malaltsCurar) {
-                            t.getTaulell()[i][j] += -malaltsCurar;
+                            t.getTaulell()[i][j] -= malaltsCurar;
 
                         } else {
                             t.getTaulell()[i][j] = 0;

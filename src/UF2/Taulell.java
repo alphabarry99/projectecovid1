@@ -14,7 +14,7 @@ public class Taulell {
     private float[][] taulell;
 
     /**
-     * Es per obtenir el taulell senser
+     * Es per obtenir el taulell sencer
      *
      * @return ens retornará el valor de la taula
      */
@@ -115,7 +115,13 @@ public class Taulell {
             }
         }
     }
-
+    public void transmitirVirus(Float taxa) {
+        for (int i = 0; i < getFiles(); i++) {
+            for (int j = 0; j < getColumnes(); j++) {
+                taulell[i][j] = (int) (taulell[i][j] * taxa) + taulell[i][j];
+            }
+        }
+    }
     /**
      *Enns ajudará a poder printar bé el taulell
      * @return value of toString
