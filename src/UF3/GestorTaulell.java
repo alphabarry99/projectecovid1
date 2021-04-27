@@ -102,13 +102,9 @@ public class GestorTaulell {
                     t.setCasella(fila, columna, (numeromalalts - malaltsCurar));
 
                 } else {
-                    for (int i = 0; i < fila; i++) {
-                        for (int j = 0; j < columna; j++) {
-                            int numeromalalts = (int) t.getCasella(fila, columna);
-                            t.setCasella(fila, columna, (numeromalalts = 0));
+                    int numeromalalts = (int) t.getCasella(fila, columna);
+                    t.setCasella(fila, columna, (numeromalalts = 0));
                         }
-                    }
-                }
             }
         } else if (opcio == 2) {
             System.out.println("Que vols curar en percentatge(1) o en enter(2) ");
@@ -119,14 +115,9 @@ public class GestorTaulell {
                 for (int i = 0; i < t.getFiles(); i++) {
                     for (int j = 0; j < t.getColumnes(); j++) {
                         float numRestar = (t.getCasella(i, j) * malaltsCurarFloat) / 100;
-                        if (numRestar > t.getCasella(i, j)) {
-                            t.setCasella(i, j, 0);
-
-                        } else {
-                            float num = t.getCasella(i, j);
-                            t.setCasella(i, j, (int) (num - numRestar));
+                        float num = t.getCasella(i, j);
+                        t.setCasella(i, j, (int) (num - numRestar));
                         }
-                    }
                 }
             } else if (opcio3 == 2) {
                 System.out.println("Quants malalts vols curar(1-100)");
