@@ -18,20 +18,22 @@ public class LecturaFitxer {
         float[][] llegirtaulell = new float[0][0];
         try {
             File f = new File("res/taulells.txt");
-            Scanner in = new Scanner(f);
-            String espai = in.nextLine();
+            Scanner scan = new Scanner(new File());
+            String espai = scan.nextLine();
             String[] separador = espai.split(" ");
             files = Integer.parseInt(separador[0]);
             taulell.setFiles(files);
             columnes = Integer.parseInt(separador[1]);
             taulell.setColumnes(columnes);
             llegirtaulell = new float[files][columnes];
-            espai = in.nextLine();
+            espai = scan.nextLine();
             separador = espai.split(" ");
-            for (int i = 0; i < files; i++) {
-                for (int j = 0; j < columnes; j++) {
-                    llegirtaulell[i][j] = Float.parseFloat(String.valueOf(separador[j]));
-                    System.out.print(llegirtaulell[i][j]);
+            while (espai != null) {
+                for (int i = 0; i < files; i++) {
+                    for (int j = 0; j < columnes; j++) {
+                        llegirtaulell[i][j] = Float.parseFloat(String.valueOf(separador[j]));
+                        System.out.print(llegirtaulell[i][j]);
+                    }
                 }
             }
             taulell.setTaulell(llegirtaulell);

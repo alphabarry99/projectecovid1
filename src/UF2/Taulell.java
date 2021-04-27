@@ -114,10 +114,11 @@ public class Taulell {
                 taulell[i][j] = 0;
             }
         }
-    }public void transmitirVirus(Float taxa) {
+    }
+    public void transmitirVirus(Float taxa) {
         for (int i = 0; i < getFiles(); i++) {
             for (int j = 0; j < getColumnes(); j++) {
-                getTaulell()[i][j] = (int) (getTaulell()[i][j] * taxa) + getTaulell()[i][j];
+                taulell[i][j] = (int) (taulell[i][j] * taxa) + taulell[i][j];
             }
         }
     }
