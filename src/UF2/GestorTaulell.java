@@ -97,12 +97,9 @@ public class GestorTaulell {
                     t.setCasella(fila, columna, (numeromalalts - malaltsCurar));
 
                 } else {
-                    for (int i = 0; i < fila; i++) {
-                        for (int j = 0; j < columna; j++) {
                             int numeromalalts = (int) t.getCasella(fila, columna);
                             t.setCasella(fila, columna, (numeromalalts = 0));
-                        }
-                    }
+
                 }
             }
         } else if (opcio == 2) {
