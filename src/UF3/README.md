@@ -5,6 +5,7 @@ Aquest projecte es un programa per consultar informació sobre una API de covid 
 ## Esquema:
 
 -Tenim el menú amb diferents opcions:
+
 ![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/menu.jpeg)
 
 1-En la primera opció tenim per cridar el taulell:
