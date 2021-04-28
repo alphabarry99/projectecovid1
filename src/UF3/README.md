@@ -6,7 +6,7 @@ Aquest projecte es un programa per consultar informació sobre una API de covid 
 
     -Tenim el menú amb diferents opcions:
 
-        -En la primera opció tenim per cridar el taulell:https://raw.githubusercontent.com/alphabarry99/projectecovid1/blob/master/src/UF3/myAvatar%20(1).png
+        -En la primera opció tenim per cridar el taulell:
         -En la segona opció podrem introduir els malalts on vulguem en 
             el taulell i la quantitat que vulguem
         -En tercera opció es pot transmetre el virus mitjançant una taxa de transmissió
