@@ -1,4 +1,4 @@
-#Projecte Covid
+# Projecte Covid
 
 Aquest projecte es un programa per consultar informació sobre una API de covid i per generar un tablero amb infectats del Covid i anant fent differents funcions.
 
