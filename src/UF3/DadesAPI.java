@@ -5,10 +5,12 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 import java.util.Scanner;
 
 public class DadesAPI {
@@ -54,7 +56,7 @@ public class DadesAPI {
         JSONArray subregions = (JSONArray) region.get("sub_regions");
         JSONObject girona = (JSONObject) subregions.get(1);
 
-        System.out.println("A Girona hi han hagut: "+ girona.get("yesterday_confirmed") + " casos de CoronaVirus el día : " + dataPrint);
+        System.out.println("A Girona hi han hagut: "+ girona.get("today_new_confirmed") + " casos de CoronaVirus el día : " + dataPrint);
 
 
     }
@@ -75,7 +77,7 @@ public class DadesAPI {
         JSONObject countries = (JSONObject) fecha.get("countries");
         JSONObject Pais = (JSONObject) countries.get(paisPrintat);
 
-        System.out.println("A "+ Pais.get("name_es")+ " hi han hagut: "+ Pais.get("yesterday_confirmed") + " casos de CoronaVirus el día : " + dataPrintMundial);
+        System.out.println("A "+ Pais.get("name_es")+ " hi han hagut: "+ Pais.get("yesterday_confirmed") + " casos totals de CoronaVirus el día : " + dataPrintMundial);
     }
     public void getDadesMundialsInterval() throws IOException, ParseException{
         System.out.println("¿Quin interval vols veure ?(Format: AAAA-MM-DD)");
@@ -102,7 +104,7 @@ public class DadesAPI {
         Long casosFin = (Long) PaisFinish.get("today_confirmed");
         Long casosTotal = casosFin-casosStart;
 
-        System.out.println("A "+PaisStart.get("name_es")+ " hi han hagut un total de: "+casosTotal+" casos de CoronaVirus en el interval de : "+dataPrintMundialStart+" a "+dataPrintMundialFinish);
+        System.out.println("A "+PaisStart.get("name_es")+ " hi han hagut un total de: "+casosTotal+" casos totals de CoronaVirus en el interval de : "+dataPrintMundialStart+" a "+dataPrintMundialFinish);
     }
 
 }
