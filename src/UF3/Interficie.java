@@ -25,6 +25,7 @@ public class Interficie {
         System.out.println("3. Transmitir virus");
         System.out.println("4. Curar malalts");
         System.out.println("5. Consultar Dades API");
+        System.out.println("6. Guardar les dades");
         System.out.println("0. Sortir");
     }
 

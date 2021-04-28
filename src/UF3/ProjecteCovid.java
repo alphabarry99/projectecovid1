@@ -28,7 +28,7 @@ public class ProjecteCovid {
     public void inici() throws IOException, ParseException {
         String[] menu = {
                 "MENÚ",
-                "1. XXX", "2. XXX", "3. XXX", "4. XXX","5. XXX", "0. Sortir"
+                "1. XXX", "2. XXX", "3. XXX", "4. XXX","5. XXX","6. XXX", "0. Sortir"
         };
         int opcio = 0;
         int files = 0;
@@ -81,6 +81,8 @@ public class ProjecteCovid {
                         case 4: d.getDadesMundialsInterval();
                     }
                     break;
+                case 6:
+                    g.guardarFichero(t);
                 case 0:
 
                     break;

@@ -1,5 +1,8 @@
 package src.UF3;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 /**
@@ -8,6 +11,9 @@ import java.util.Scanner;
  * @author Albert Buch i Alpha Omar Barry
  */
 public class GestorTaulell {
+    src.UF3.Taulell t = new Taulell();
+    public static int malaltsTotals;
+    public static int curatsTotals;
 
     Scanner in = new Scanner(System.in);
 
@@ -37,6 +43,35 @@ public class GestorTaulell {
         t.createTaulellBuit();
     }
 
+    public void guardarFichero(Taulell t) {
+        int malaltsActuals=0;
+        for (int i = 0; i < t.getFiles(); i++) {
+            for (int j = 0; j < t.getColumnes(); j++) {
+                if(t.getCasella(i,j)>0){
+                    malaltsActuals+=t.getCasella(i,j);
+                }
+            }
+        }
+        try {
+            Scanner reader = new Scanner(System.in);
+            FileWriter guardar = new FileWriter("res/taulellguardat.txt",true);
+            guardar.write("-------------------------------------" + "\n");
+            guardar.write((LocalDateTime.now()) + "\n");
+            guardar.write("-------------------------------------" + "\n");
+            guardar.write("Malalts Actuals : " + malaltsActuals + "\n");
+            guardar.write("Malalts Totals : " + malaltsTotals + "\n");
+            guardar.write("Curats Totals : " + curatsTotals + "\n");
+            for (int i = 0; i < t.getFiles(); i++) {
+                for (int j = 0; j <t.getColumnes() ; j++) {
+                    guardar.write(String.valueOf(t.getCasella(i,j)) + " ");
+                }guardar.write("\n");
+            }
+            guardar.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     /**
      *Funció per introduir malalts escollints la casella i el numero de malalts
      * @param t
@@ -48,8 +83,8 @@ public class GestorTaulell {
         int x = in.nextInt() - 1;
         System.out.println("¿A quina columna?");
         int y = in.nextInt() - 1;
-        t.setCasella(x, y, malalts);
-
+        t.setCasella(x, y, (int) (t.getCasella(x, y)+malalts));
+        malaltsTotals+=malalts;
     }
 
     /**
@@ -88,10 +123,12 @@ public class GestorTaulell {
                 float numRestar = (t.getCasella(fila, columna) * malaltsCurarFloat) / 100;
                 float num = t.getCasella(fila, columna);
                 if (numRestar > t.getCasella(fila, columna)) {
+                    curatsTotals+=t.getCasella(fila,columna);
                     t.setCasella(fila, columna, 0);
 
                 } else {
                     t.setCasella(fila, columna, (int) (num - numRestar));
+                    curatsTotals+=numRestar;
                 }
             } else if (opcio2 == 2) {
 
@@ -100,11 +137,12 @@ public class GestorTaulell {
                 if (t.getCasella(fila, columna) > malaltsCurar) {
                     int numeromalalts = (int) t.getCasella(fila, columna);
                     t.setCasella(fila, columna, (numeromalalts - malaltsCurar));
-
+                    curatsTotals+=malaltsCurar;
                 } else {
+                    curatsTotals += t.getCasella(fila, columna);
                     int numeromalalts = (int) t.getCasella(fila, columna);
                     t.setCasella(fila, columna, (numeromalalts = 0));
-                        }
+                }
             }
         } else if (opcio == 2) {
             System.out.println("Que vols curar en percentatge(1) o en enter(2) ");
@@ -117,6 +155,7 @@ public class GestorTaulell {
                         float numRestar = (t.getCasella(i, j) * malaltsCurarFloat) / 100;
                         float num = t.getCasella(i, j);
                         t.setCasella(i, j, (int) (num - numRestar));
+                        curatsTotals+=numRestar;
                         }
                 }
             } else if (opcio3 == 2) {
@@ -126,9 +165,11 @@ public class GestorTaulell {
                     for (int j = 0; j < t.getColumnes(); j++) {
                         if (t.getTaulell()[i][j] > malaltsCurar) {
                             t.getTaulell()[i][j] += -malaltsCurar;
-
+                            curatsTotals+=malaltsCurar;
                         } else {
+                            curatsTotals+=t.getCasella(i,j);
                             t.getTaulell()[i][j] = 0;
+
                         }
                     }
                 }

@@ -1,6 +1,9 @@
 package src.UF3;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -152,6 +155,7 @@ public class Taulell {
         }
         return null;
     }
+
 
     /**
      * Ens ajudará a poder printar bé el taulell
