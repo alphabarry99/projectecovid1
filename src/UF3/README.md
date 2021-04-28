@@ -2,7 +2,7 @@
 
 Aquest projecte es un programa per consultar informació sobre una API de covid i per generar un tablero amb infectats del Covid i anant fent differents funcions.
 
-##Esquema:
+## Esquema:
 
 -Tenim el menú amb diferents opcions:
 
@@ -25,4 +25,5 @@ Aquest projecte es un programa per consultar informació sobre una API de covid 
 En gestor taulell hem organitzat i adjuntat diferents funcions en altres funcions que necessitàvem per tenir les opcions del taulell.
 En interfície tenim el printat del taulell i a la nostra main es des d'on es trucarán totes les funcions del nostre programa.
 
-4-Joc de proves
+## AUTORS
+Albert Buch, Alpha Omar Barry
