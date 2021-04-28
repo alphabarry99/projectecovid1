@@ -4,16 +4,19 @@ Aquest projecte es un programa per consultar informació sobre una API de covid 
 
 ##Esquema:
 
-  -Tenim el menú amb diferents opcions:
+-Tenim el menú amb diferents opcions:
 
-   1-En la primera opció tenim per cridar el taulell:
+1-En la primera opció tenim per cridar el taulell:
       ![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/myAvatar%20(1).png) 
       
-        -En la segona opció podrem introduir els malalts on vulguem en 
-            el taulell i la quantitat que vulguem
-        -En tercera opció es pot transmetre el virus mitjançant una taxa de transmissió
-        -En la quarta opció tenim l'opció de curar malalts o globalment o per caselles
-        -En l'ultima opció tenim per sortir del programa
+2-En la segona opció podrem introduir els malalts on vulguem en 
+            el taulell i la quantitat que vulguem:
+
+3-En tercera opció es pot transmetre el virus mitjançant una taxa de transmissió
+
+4-En la quarta opció tenim l'opció de curar malalts o globalment o per caselles
+
+5-En l'ultima opció tenim per sortir del programa
 
 2-Decisions 
 -Em decidit utilitzar la classe taulell per així facilitar-nos la distribució del codi
