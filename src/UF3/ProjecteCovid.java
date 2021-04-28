@@ -36,7 +36,6 @@ public class ProjecteCovid {
         src.UF3.GestorTaulell g = new src.UF3.GestorTaulell();
         src.UF3.Taulell t = new Taulell();
         src.UF3.DadesAPI d = new DadesAPI();
-        src.UF3.LecturaFitxer l= new LecturaFitxer();
 
         //  float[][] taulell = new float[0][0];
         Scanner sc = new Scanner(System.in);
@@ -45,7 +44,7 @@ public class ProjecteCovid {
             opcio = Utils.validarEnter("Tria una opció", "Error");
             switch (opcio) {
                 case 1:
-                    l.getLecturaFitxer();
+                    System.out.println(t.getLecturaFitxer(t));
                     break;
                 case 2:
                     g.introduirMalalts(t);

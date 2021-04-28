@@ -1,6 +1,8 @@
 package src.UF3;
 
+import java.io.File;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Es crearán les funcions del nostre taulell
@@ -124,6 +126,32 @@ public class Taulell {
         this.taulell = new float[files][columnes];
 
     }
+    public Float getLecturaFitxer(Taulell t) {
+        try {
+            File f = new File("res/taulells.txt");
+            Scanner in = new Scanner(f);
+            String[] espai = in.nextLine().split(" ");
+            int filestext = Integer.parseInt(espai[0]);
+            int columnestext = Integer.parseInt(espai[1]);
+            int i = 0;
+            t.setFiles(filestext);
+            t.setColumnes(columnestext);
+            float[][] llegirtaulell = new float[files][columnes];
+            while (in.hasNextLine()) {
+                espai = in.nextLine().split(" ");
+                for (int j = 0; j < columnes; j++) {
+                    llegirtaulell[i][j] = Float.parseFloat(espai[j]);
+                    System.out.print((int) llegirtaulell[i][j] + " ");
+                }
+                System.out.println();
+                i++;
+            }
+            t.setTaulell(llegirtaulell);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 
     /**
      * Ens ajudará a poder printar bé el taulell
@@ -134,10 +162,9 @@ public class Taulell {
     public String toString() {
         StringBuilder cad = new StringBuilder();
         for (int i = 0; i < files; i++) {
-            System.out.println("\n");
             for (int j = 0; j < columnes; j++) {
-                System.out.println(taulell[i][j] + "\t");
-            }
+                cad.append((int)taulell[i][j] + "\t");}
+                cad.append("\n");
         }
         return cad.toString();
     }
