@@ -1,8 +1,11 @@
-1-Esquema:
+#Projecte Covid
+Aquest projecte es un programa per consultar informació sobre una API de covid i per generar un tablero amb infectats del Covid i anant fent differents funcions.
+
+##Esquema:
+
     -Tenim el menú amb diferents opcions:
 
-        -En la primera opció tenim per crear el taulell amb dues opcions a dintre seu, 
-            que serien per carregar un taulell buit o ple amb random
+        -En la primera opció tenim per cridar el taulell:
         -En la segona opció podrem introduir els malalts on vulguem en 
             el taulell i la quantitat que vulguem
         -En tercera opció es pot transmetre el virus mitjançant una taxa de transmissió
