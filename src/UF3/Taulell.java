@@ -126,7 +126,7 @@ public class Taulell {
     }
 
     /**
-     * Enns ajudará a poder printar bé el taulell
+     * Ens ajudará a poder printar bé el taulell
      *
      * @return value of toString
      */
@@ -134,10 +134,10 @@ public class Taulell {
     public String toString() {
         StringBuilder cad = new StringBuilder();
         for (int i = 0; i < files; i++) {
+            System.out.println("\n");
             for (int j = 0; j < columnes; j++) {
-                cad.append(taulell[i][j] + "\t");
+                System.out.println(taulell[i][j] + "\t");
             }
-            cad.append("\n");
         }
         return cad.toString();
     }

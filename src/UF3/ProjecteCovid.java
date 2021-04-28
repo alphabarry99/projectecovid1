@@ -45,7 +45,7 @@ public class ProjecteCovid {
             opcio = Utils.validarEnter("Tria una opció", "Error");
             switch (opcio) {
                 case 1:
-                    System.out.println(l.getLecturaFitxer());
+                    l.getLecturaFitxer();
                     break;
                 case 2:
                     g.introduirMalalts(t);

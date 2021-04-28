@@ -5,24 +5,35 @@ import java.io.File;
 import java.util.Scanner;
 
 public class LecturaFitxer {
-    Taulell taulell = new Taulell();
     int files;
     int columnes;
     int i;
-    src.UF3.Taulell t = new Taulell();
+    Taulell t = new Taulell();
 
     public String getLecturaFitxer() {
-            try {
-                File f = new File("res/taulells.txt");
-                Scanner in = new Scanner(f);
-
-                while (in.hasNextLine()){
-                    System.out.println(in.nextLine());
+        System.out.println("a");
+        float[][] llegirtaulell;
+        try {
+            File f = new File("res/taulells.txt");
+            Scanner in = new Scanner(f);
+            String[] espai = in.nextLine().split(" ");
+            int filestext = Integer.parseInt(espai[0]);
+            int columnestext = Integer.parseInt(espai[1]);
+            t.setColumnes(columnestext);
+            t.setFiles(filestext);
+            llegirtaulell = new float[files][columnes];
+            int i = 0;
+            while (in.hasNextLine()) {
+                for (int j = 0; j < files; i++) {
+                    llegirtaulell[i][j] = Float.parseFloat(String.valueOf(espai[i]));
+                    System.out.print(llegirtaulell[i][j]);
                 }
-            }catch (Exception e){
-                System.out.println(e.getMessage());
+                i++;
             }
-
-        return null;
+            t.setTaulell(llegirtaulell);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    return null;
     }
 }
