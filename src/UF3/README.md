@@ -12,10 +12,23 @@ Aquest projecte es un programa per consultar informació sobre una API de covid 
       
 2-En la segona opció podrem introduir els malalts on vulguem en 
             el taulell i la quantitat que vulguem:
+![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/introduirmalalts.jpeg)
 
 3-En tercera opció es pot transmetre el virus mitjançant una taxa de transmissió
+![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/transmitirvirus.jpeg)
 
-4-En la quarta opció tenim l'opció de curar malalts o globalment o per caselles
+4-En la quarta opció tenim l'opció de curar malalts individualment o globalment i en enter o amb percentatge:
+ -Individualment i amb percentatge:
+![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/curarmalaltspercen.jpeg)
+
+ -Individualment amb un enter:
+![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/curarmalaltsenter.jpeg)
+
+ -Global amb percentatge:
+ ![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/curarglobalpercen.jpeg)
+
+ Golbal amb un enter:
+ ![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/curarglobalenter.jpeg)
 
 5-En la cinquena opció podrem consultar l'API per obtenir informació sobre el COVID:
 
@@ -31,6 +44,18 @@ En interfície tenim el printat del taulell i a la nostra main es des d'on es tr
 ### Importació i emmagatzematge:
 
 ### Consum de l'API:
+ -En un dia concret:
+ ![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/consultaapi1.jpeg)
+
+ -En Girona:
+ ![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/girona.jpeg)
+
+ -En un païs random:
+ ![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/paisrandom.jpeg)
+
+ -Païs random i interval de temps:
+ ![Alt text](https://github.com/alphabarry99/projectecovid1/blob/master/src/UF3/images/interval.jpeg)
+
 
 ## AUTORS
 Albert Buch, Alpha Omar Barry
