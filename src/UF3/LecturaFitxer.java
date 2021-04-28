@@ -1,6 +1,5 @@
 package src.UF3;
 
-import com.sun.security.jgss.GSSUtil;
 
 import java.io.File;
 import java.util.Scanner;
